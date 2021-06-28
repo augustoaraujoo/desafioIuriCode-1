@@ -1,6 +1,7 @@
 <template>
     <header>
-        <div class="Box">
+        <div class="Box" v-if="verLista">
+            <button @click="ClickLista">ver lista</button>
             <div class="elementsBox">
                 <span class="iconsAll">{{time}} de {{mes}}, {{ano}}
                     <span class="btnS"><Button/></span>
@@ -12,23 +13,28 @@
                 <span class="iconsAll">{{time}} de {{mes}}, {{ano}}
                     <span class="btnS"><Button/></span>
                 </span>
-                <h1>Agora é ofical : o Windows 11 está vindo</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga. Harum repellat magni delectus quis similique.</p>
+                <h1>Como estudar melhor</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga. Harum repellat magni delectus quis similique.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore </p>
             </div> 
             <div class="elementsBox">
                 <span class="iconsAll">{{time}} de {{mes}}, {{ano}}
                     <span class="btnS"><Button/></span>
                 </span>  
-                <h1>Agora é ofical : o Windows 11 está vindo</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga. Harum repellat magni delectus quis similique.</p>
+                <h1>Quando e como utilizar um Framework</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga. 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fugaHarum repellat magni delectus quis similique.</p>
             </div> 
             <div class="elementsBox">
                 <span class="iconsAll">{{time}} de {{mes}}, {{ano}}
                     <span class="btnS"><Button/></span>
                 </span>
-                <h1>Agora é ofical : o Windows 11 está vindo</h1>
+                <h1>Aprenda a programar em JavaScript</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga. Harum repellat magni delectus quis similique.</p>
             </div>
+        </div>
+        <div v-else>
+            <button @click="ClickLista">sadd</button>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, voluptas nihil quas maxime laudantium officia ab laborum dicta! Omnis unde, illum minima at mollitia sapiente fugit ut quod ea nostrum.</p>
         </div>
         
     </header>
@@ -40,12 +46,18 @@ export default {
     data:()=>({
         time:new Date().getDate(),
         ano: new Date().getFullYear(),
-        mes: new Date().getMonth()
+        mes: new Date().getMonth(),
+
+        verLista: true,
+        info: ''
     }),
     components:{
         Button
     },
     methods:{
+        ClickLista(){
+            this.verLista = !this.verLista
+        }
     }
 }
 </script>
@@ -78,17 +90,13 @@ export default {
     }
     .elementsBox{
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap:wrap;
         box-shadow: 1px 1px 5px 1px #31313159;
         background-color: whitesmoke;
-        padding:15px;
-        margin:8px 8px;
+        padding:20px;
+        margin:20px 20px;
         width:auto;
-        height: auto;
+        height:auto;
         border-radius: 2px;
-    }
-    .btnS:active{
-        border-radius: 50%;
-        background-color: red;
     }
 </style>
