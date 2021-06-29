@@ -1,17 +1,30 @@
 <template>
 <div class="inputContainer">
-        <input type="search" id="input" placeholder="Pesquisar no blog" v-model="getValue">
-        <button @click="active">{{}}</button>
+        <input type="search" id="input" placeholder="Pesquisar no blog" 
+         @keyup.enter="viewFilter"
+         v-model="getValue.infos"
+         >
+        <button @click="viewFilter"></button>
 </div>
 </template>
 
 <script>
 export default {
     data:()=>({
-        
+        getValue:[
+
+            {id:1,infos:'windos'},
+            {id:2,infos:'qual frame'},
+            {id:3,infos:'team fire'},
+            {id:4,infos:'js'}
+        ]
     }),
     methods:{
-
+        viewFilter(){
+            console.log(this.getValue.filter(function(p){
+                return p.id >=9
+            }))
+        }
     }
 }
 </script>
@@ -23,7 +36,6 @@ export default {
     }
     input{
         color: white;
-        
     }
     .inputContainer{
         display: flex;
@@ -31,10 +43,10 @@ export default {
         width: 100%;
     }
     #input{
-        background-color: rgba(0, 0, 255, 0.089);
-        border: none;
+        background: royalblue;
+        border:none;
         border-radius: 5px;
         height: 3rem;
-        width: 60%;
+        width: 50%;
     }
 </style>

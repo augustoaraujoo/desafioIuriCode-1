@@ -1,13 +1,13 @@
 <template>
     <header>
         <div class="Box" v-if="verLista">
-            <button @click="ClickLista">ver lista</button>
+            <button @click="ClickLista"></button>
             <div class="elementsBox">
                 <span class="iconsAll">{{time}} de {{mes}}, {{ano}}
                     <span class="btnS"><Button/></span>
                 </span>
                 <h1>Agora é ofical : o Windows 11 está vindo</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga. Harum repellat magni delectus quis similique.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga.</p>
             </div>
             <div class="elementsBox">
                 <span class="iconsAll">{{time}} de {{mes}}, {{ano}}
@@ -32,11 +32,9 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga. Harum repellat magni delectus quis similique.</p>
             </div>
         </div>
-        <div v-else>
-            <button @click="ClickLista">sadd</button>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, voluptas nihil quas maxime laudantium officia ab laborum dicta! Omnis unde, illum minima at mollitia sapiente fugit ut quod ea nostrum.</p>
+        <div v-else id="else">
+           <button  @click="ClickLista"></button>
         </div>
-        
     </header>
 </template>
 
@@ -47,9 +45,7 @@ export default {
         time:new Date().getDate(),
         ano: new Date().getFullYear(),
         mes: new Date().getMonth(),
-
-        verLista: true,
-        info: ''
+        verLista: true
     }),
     components:{
         Button
@@ -63,6 +59,9 @@ export default {
 </script>
 
 <style scoped>
+    ul,li{
+        color: black;
+    }
     .iconsAll{
         display: flex;
         width: 100%;
@@ -78,6 +77,7 @@ export default {
     }
     .Box{
         width: 75vw;
+        height: 100%;
         margin: 10px 10px;
     }
     span{
@@ -94,9 +94,18 @@ export default {
         box-shadow: 1px 1px 5px 1px #31313159;
         background-color: whitesmoke;
         padding:20px;
-        margin:20px 20px;
+        margin:25px 25px;
         width:auto;
         height:auto;
         border-radius: 2px;
+        cursor: pointer;
+    }
+    @media only screen and (max-width:768px){
+        .Box{
+             width: 100%;
+        }
+        .elementsBox{
+
+        }
     }
 </style>

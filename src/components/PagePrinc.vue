@@ -27,6 +27,10 @@ export default {
 </script>
 <style>
     .container{
+        
+            z-index: 1;
+            position:sticky;
+            top: 0px;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -55,4 +59,7 @@ export default {
         #B6B6B6
         
     */
+     @media only screen and (max-width:768px){
+      
+     }
 </style>
