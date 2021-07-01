@@ -7,48 +7,54 @@
                     <span class="btnS"><Button/></span>
                 </span>
                 <h1>Agora é ofical : o Windows 11 está vindo</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga.</p>
+                <p>{{lorem}}</p>
             </div>
             <div class="elementsBox">
                 <span class="iconsAll">{{time}} de {{mes}}, {{ano}}
                     <span class="btnS"><Button/></span>
                 </span>
                 <h1>Como estudar melhor</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga. Harum repellat magni delectus quis similique.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore </p>
+                <p>{{lorem}}</p>
             </div> 
             <div class="elementsBox">
                 <span class="iconsAll">{{time}} de {{mes}}, {{ano}}
                     <span class="btnS"><Button/></span>
                 </span>  
                 <h1>Quando e como utilizar um Framework</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga. 
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fugaHarum repellat magni delectus quis similique.</p>
+                <p>{{lorem}}</p>
             </div> 
             <div class="elementsBox">
                 <span class="iconsAll">{{time}} de {{mes}}, {{ano}}
                     <span class="btnS"><Button/></span>
                 </span>
                 <h1>Aprenda a programar em JavaScript</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga. Harum repellat magni delectus quis similique.</p>
+                <p>{{lorem}}</p>
             </div>
         </div>
         <div v-else id="else">
            <button  @click="ClickLista"></button>
+             <T/>
+             <h1>dasdad</h1>
         </div>
     </header>
 </template>
 
 <script>
 import Button from './Button.vue'
+import T from './T.vue'
 export default {
     data:()=>({
         time:new Date().getDate(),
         ano: new Date().getFullYear(),
         mes: new Date().getMonth(),
-        verLista: true
+        lorem:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga.Lorem ipsum dolor sit amet consectetur ae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga.',
+
+        verLista: true,
+
     }),
     components:{
-        Button
+        Button,
+        T
     },
     methods:{
         ClickLista(){
@@ -103,9 +109,6 @@ export default {
     @media only screen and (max-width:768px){
         .Box{
              width: 100%;
-        }
-        .elementsBox{
-
         }
     }
 </style>

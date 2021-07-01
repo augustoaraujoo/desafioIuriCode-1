@@ -1,7 +1,7 @@
 <template>
 <div class="inputContainer">
         <input type="search" id="input" placeholder="Pesquisar no blog" 
-         @keyup.enter="viewFilter"
+         @keyup="viewFilter"
          v-model="getValue.infos"
          >
         <button @click="viewFilter"></button>
@@ -12,18 +12,12 @@
 export default {
     data:()=>({
         getValue:[
-
-            {id:1,infos:'windos'},
-            {id:2,infos:'qual frame'},
-            {id:3,infos:'team fire'},
-            {id:4,infos:'js'}
+            
         ]
     }),
     methods:{
         viewFilter(){
-            console.log(this.getValue.filter(function(p){
-                return p.id >=9
-            }))
+            
         }
     }
 }
