@@ -20,6 +20,7 @@ export default {
       cursor: pointer;
     }
     h1{
+        cursor: text;
         text-align:start;
         font-size: 20pt;
         color: #313131;
@@ -27,6 +28,7 @@ export default {
         font-family: 'Lexend Deca', sans-serif;
     }
       p{
+        cursor: text;
         font-size: 12pt;
         padding: 10px;
         text-align: justify;

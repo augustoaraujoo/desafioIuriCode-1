@@ -3,10 +3,18 @@
         <div class="elementsNav">
             <h2>Codelândia</h2>
             <h2>blog</h2>
+
+            <div v-if="viewIcon">
+                <img :src="iconImg" @click="viewIcons" class="iconBtn">
+            </div>
+            
+            <div v-else>
+                <img :src="iconImg2" @click="viewIcons" class="iconBtn">
+            </div>
         </div>
-                <div class="inputC">
-                    <Input/>
-                </div>
+
+    <div class="inputC"><Input/></div>
+
     </nav>
     <header>
         <Infos/>
@@ -17,11 +25,25 @@ import Input from './Input.vue'
 import Infos from './Infos.vue'
 export default {
     data:()=>({
-
+            viewIcon:true,
+            iconImg:'img/sol.png'
     }),
     components:{
         Input,
         Infos
+    },
+    methods:{
+        viewIcons(){
+            this.viewIcon = !this.viewIcon
+            
+                document.querySelector('body').style.backgroundColor = 'white'
+            if(!this.viewIcon){
+                this.iconImg2 ='img/night.png'
+
+                console.log('!this.viewIcon ="night"')
+                document.querySelector('body').style.backgroundColor = 'black'
+            }
+        }
     }
 }
 </script>
@@ -52,13 +74,13 @@ export default {
         justify-content: center;
         align-items: center;
     }
-    /*
-    Titulo
-        #313131
-    descri 
-        #B6B6B6
-        
-    */
+    .iconBtn{
+        width: auto;
+        height: auto;
+        border: none;
+        background-color: transparent;
+    }
+
      @media only screen and (max-width:768px){
       
      }
