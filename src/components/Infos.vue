@@ -107,6 +107,11 @@ export default {
     @media only screen and (max-width:768px){
         .Box{
              width: 100%;
+             background-color: red;
+        }
+        .elementsBox{
+            background-color: green;
+            height: 50%;
         }
     }
 </style>

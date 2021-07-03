@@ -1,13 +1,13 @@
 <template>
     <nav class="container">
         <div class="elementsNav">
-            <h2>Codelândia</h2>
+            <h2 >Codelândia</h2>
             <h2>blog</h2>
 
             <div v-if="viewIcon">
                 <img :src="iconImg" @click="viewIcons" class="iconBtn">
             </div>
-            
+
             <div v-else>
                 <img :src="iconImg2" @click="viewIcons" class="iconBtn">
             </div>
@@ -35,13 +35,8 @@ export default {
     methods:{
         viewIcons(){
             this.viewIcon = !this.viewIcon
-            
-                document.querySelector('body').style.backgroundColor = 'white'
             if(!this.viewIcon){
                 this.iconImg2 ='img/night.png'
-
-                console.log('!this.viewIcon ="night"')
-                document.querySelector('body').style.backgroundColor = 'black'
             }
         }
     }
@@ -59,6 +54,7 @@ export default {
         justify-content: center;
         height: 30vh;
         background-image: linear-gradient(to right,#574AE8,#3EA1DB);
+        
     }
     .elementsNav{
         width:100%;

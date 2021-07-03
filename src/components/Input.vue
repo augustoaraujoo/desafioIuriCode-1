@@ -1,28 +1,24 @@
-<template>
+<template class=".dark">
 <div class="inputContainer">
-        <input type="search" id="input" placeholder="Pesquisar no blog" 
-         @keyup="viewFilter"
-         v-model="getValue.infos"
-         >
+        <input type="search" id="input" placeholder="Pesquisar no blog">
 </div>
 </template>
 
 <script>
 export default {
     data:()=>({
-        getValue:[
-            
-        ]
+
     }),
     methods:{
-        viewFilter(){
-            
-        }
-    }
+
+     }
 }
 </script>
 
 <style scoped>
+    h1{
+        background-color: rebeccapurple;
+    }
     input::placeholder{
         color: white;
         font-size: 11pt;
@@ -36,7 +32,7 @@ export default {
         width: 100%;
     }
     #input{
-        background: royalblue;
+        background: royalblue ;
         border:none;
         border-radius: 5px;
         height: 3rem;
