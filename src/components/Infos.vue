@@ -2,7 +2,7 @@
     <header>
         <div class="Box" v-if="verLista">
             <button @click="ClickLista"></button>
-        
+            
             <div class="elementsBox">
                 <span class="iconsAll">{{time}} de {{mes}}, {{ano}}
                     <span class="btnS"><Button/></span>
@@ -34,10 +34,7 @@
         </div>
         <div v-else id="else">
            <button  @click="ClickLista"></button>
-<<<<<<< HEAD
-=======
-             <T/>
->>>>>>> b74252559a9db5ea5181a28a13415871178fc2d8
+
              <h1>dasdad</h1>
         </div>
     </header>
@@ -45,7 +42,6 @@
 
 <script>
 import Button from './Button.vue'
-import T from './T.vue'
 export default {
     data:()=>({
         time:new Date().getDate(),
@@ -53,16 +49,11 @@ export default {
         mes: new Date().getMonth(),
         lorem:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga.Lorem ipsum dolor sit amet consectetur ae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga.',
 
-<<<<<<< HEAD
         verLista: true
-=======
-        verLista: true,
->>>>>>> b74252559a9db5ea5181a28a13415871178fc2d8
 
     }),
     components:{
-        Button,
-        T
+        Button
     },
     methods:{
         ClickLista(){
@@ -70,6 +61,7 @@ export default {
         }
     }
 }
+
 </script>
 
 <style scoped>
@@ -119,12 +111,10 @@ export default {
              width: 100%;
              background-color: red;
         }
-<<<<<<< HEAD
+
         .elementsBox{
             background-color: green;
             height: 50%;
         }
-=======
->>>>>>> b74252559a9db5ea5181a28a13415871178fc2d8
     }
 </style>

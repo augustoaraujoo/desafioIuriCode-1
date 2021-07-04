@@ -1,7 +1,7 @@
 <template class="dark">
   <div>
     <PagePrinc/>
-    <h1 @click="dark">a</h1>
+    <h1 @click="dark"><img :src="iconImg" alt="img sol/lua"></h1>
   </div>
 </template>
 
@@ -12,6 +12,10 @@ export default {
   components: {
     PagePrinc
   },
+  data:()=>({
+            viewIcon:true,
+            iconImg:'img/sol.png'
+  }),
   methods:{
     dark(){
        var element = document.body;
@@ -25,12 +29,13 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lexend+Deca&display=swap');
 
 html{
-    --bg:#e74949;
+    --bg:#2F3136;
 }
 .dark{
   background-color: var(--bg);
   color: white;
 }
+
     img,svg{cursor: pointer;}
 
     h1{
