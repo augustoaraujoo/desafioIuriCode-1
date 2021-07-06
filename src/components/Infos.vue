@@ -33,9 +33,20 @@
             </div>
         </div>
         <div v-else id="else">
-           <button  @click="ClickLista"></button>
-
-             <h1>dasdad</h1>
+           <button  @click="ClickLista">retorne</button>
+            <div>
+                <input type="text" placeholder="digite o Título" v-model="inputTask">
+                <input type="text" placeholder="digite o texto" v-model="texto">
+                
+                    <h1  v-for="inputV in inputValue"
+                     :key="inputV">{{inputV}}
+                    </h1>
+                    <p v-for="txt in textValue" :key="txt">
+                        {{txt}}
+                    </p>
+                    <button @click="newText">confirmar</button>
+            </div>
+            
         </div>
     </header>
 </template>
@@ -49,8 +60,12 @@ export default {
         mes: new Date().getMonth(),
         lorem:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores labore molestiae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga.Lorem ipsum dolor sit amet consectetur ae odit, blanditiis, officia nihil facere tempora id laudantium velit sequi repellendus nam fuga.',
 
-        verLista: true
+        verLista: true,
+        inputValue:[""],
+        inputTask:'',
 
+        textValue:[""],
+        texto:''
     }),
     components:{
         Button
@@ -58,6 +73,14 @@ export default {
     methods:{
         ClickLista(){
             this.verLista = !this.verLista
+        },
+        newText(){
+            if(this.inputTask === '' || this.texto ===''){
+                return false
+            }else{
+                this.inputValue.push(this.inputTask)
+                this.textValue.push(this.texto)
+            }
         }
     }
 }
@@ -65,8 +88,14 @@ export default {
 </script>
 
 <style scoped>
-    ul,li{
-        color: black;
+    li{
+        color: rgb(243, 240, 240);
+    }
+    ul{
+        display: flex;
+        justify-content: center;
+        height: 30vh;
+        background: #181818;
     }
     .iconsAll{
         display: flex;
